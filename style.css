@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    background-image: url(./img/pexels-pixabay-276528.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+.container header h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 2px;
+    color: white;
+    transition: 0.5s linear;
+}
+
+.container header h1:hover {
+    color: yellow;
+}
+
+.container header .socials {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.container header .socials .call,
+.container header .socials .li {
+    font-weight: 700;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.container header .socials .li {
+    font-size: 1.2rem;
+}
+
+.container header .socials .call:hover,
+.container header .socials .li:hover {
+    color: yellow;
+    border: 1px solid white;
+    padding: 0.5rem;
+}
+
+.container header .hamburger .bars {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    background-color: yellow;
+    cursor: pointer;
+}
+
+.container header .hamburger .cancel {
+    display: none;
+}
+
+.container .menu {
+    list-style: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 2rem;
+    font-weight: 700;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor: pointer;
+    padding-right: 1.5rem;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(245, 231, 231, 0.438);
+    color: black;
+    transition: right 0.3s ease;
+    padding-top: 5rem;
+    padding-right: 2rem;
+}
+
+.container .menu li {
+    margin-right: 1.5rem;
+    transition: 0.5s;
+}
+
+.container .menu li:hover {
+    color: yellow;
+}
+
+.container .menu.active {
+    right: 0;
+}
+
+.container section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    width: 50%;
+    margin-left: 3rem;
+    text-align: center;
+    animation: fadeInUp 1.2s ease-in;
+}
+
+.container section .intro {
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 700;
+    width: 10rem;
+    margin-bottom: 2rem;
+    animation: slideInLeft 1.5s ease-in-out;
+
+}
+
+.container section h1 span {
+    color: yellow;
+}
+
+.container section h1 {
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 4rem;
+    font-weight: bolder;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    animation: slideFromBottom 1.5s ease-in-out;
+}
+
+.container section button {
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.3rem;
+    padding: 0.8rem 1.5rem;
+    border: yellow 1px solid;
+    margin: 1rem 0 3rem 0;
+    cursor: pointer;
+    transition: 0.4s;
+    animation: fadeInUp 2s ease;
+}
+
+.container section button:hover {
+    background-color: yellow;
+    border: none;
+    transform: scale(1.1, 1.1);
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideFromBottom {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .container section h1 {
+        font-size: 2.5rem;
+    }
+
+    .container header .socials {
+        gap: 1rem;
+    }
+
+    .container header .socials .li {
+        font-size: 1rem;
+    }
+
+    .container .menu {
+        width: 70%;
+    }
+
+    .container section {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container header h1 {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .container header .socials {
+        /* flex-direction: column; */
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .container section h1 {
+        font-size: 2rem;
+    }
+
+    .container section button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .container .menu {
+        width: 100%;
+        padding-right: 1rem;
+    }
+    .container .hamburger .bars{
+        position: absolute;
+        left: 21rem;
+        top: 2px;
+    }
+}
